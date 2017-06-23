@@ -34,7 +34,7 @@ var app = {
 					time=Date.parse(value.time).toString("hh:mm tt");
 					slider_val=localStorage.getItem(r_key+'_slider');
 					//Create visual div
-					$('#main').append('<div id="id_'+r_key+'" class="entry w3-card-4 w3-round w3-leftbar w3-border-white w3-gray"><div id="id_'+r_key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+r_key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_task('+r_key+')"></div>Deadline: <span id="id_'+r_key+'_date">'+date+'</span>, <span id="id_'+r_key+'_time">'+time+'</span><br><br><div class="edit_btn img_btn w3-ripple" onclick="edit_task('+r_key+')"></div>Progress:<span id="id_'+r_key+'_slidervalue">'+slider_val+'</span>%<br><br><br><input id="id_'+r_key+'_slider" type="range" value="'+slider_val+'" step="10" oninput="update_slider('+r_key+')" onchange="store_slider('+r_key+')" ></div>');
+					$('#main').append('<div id="id_'+r_key+'" class="entry w3-card-4 w3-round w3-leftbar w3-rightbar w3-border-white w3-gray"><div id="id_'+r_key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+r_key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_task('+r_key+')"></div>Deadline: <span id="id_'+r_key+'_date">'+date+'</span>, <span id="id_'+r_key+'_time">'+time+'</span><br><br><div class="edit_btn img_btn w3-ripple" onclick="edit_task('+r_key+')"></div>Progress:<span id="id_'+r_key+'_slidervalue">'+slider_val+'</span>%<br><br><br><input id="id_'+r_key+'_slider" type="range" value="'+slider_val+'" step="10" oninput="update_slider('+r_key+')" onchange="store_slider('+r_key+')" ></div>');
 				
 				//Increment key
 					key=parseInt(r_key)+1;
@@ -55,7 +55,7 @@ var app = {
 					date_now=localStorage.getItem(r_key+'date');
 					time_now=localStorage.getItem(r_key+'time');
 					//Create visual div
-					$('#complete').append('<div id="id_'+r_key+'" class="entry w3-card-4 w3-round w3-leftbar w3-border-white w3-gray"><div id="id_'+r_key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+r_key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_complete_task('+r_key.split("_")[0]+')"></div>Deadline: <span id="id_'+r_key+'_date">'+date+'</span>, <span id="id_'+r_key+'_time">'+time+'</span><br><br>Completed on: <span id="id_'+r_key+'date_date">'+date_now+'</span>, <span id="id_'+r_key+'time_time">'+time_now+'</span><br></div>');
+					$('#complete').append('<div id="id_'+r_key+'" class="entry w3-card-4 w3-round w3-leftbar w3-rightbar w3-border-white w3-gray"><div id="id_'+r_key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+r_key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_complete_task('+r_key.split("_")[0]+')"></div>Deadline: <span id="id_'+r_key+'_date">'+date+'</span>, <span id="id_'+r_key+'_time">'+time+'</span><br><br>Completed on: <span id="id_'+r_key+'date_date">'+date_now+'</span>, <span id="id_'+r_key+'time_time">'+time_now+'</span><br></div>');
 				}
 			}
 		}
@@ -107,7 +107,7 @@ $('#tasker_save').click(function(e){
 			console.log(key);
 		
 			//Create visual div
-			$('#main').append('<div id="id_'+key+'" class="entry w3-card-4 w3-round w3-leftbar w3-border-white w3-gray"><div id="id_'+key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_task('+key+')"></div>Deadline: <span id="id_'+key+'_date">'+date+'</span>, <span id="id_'+key+'_time">'+time+'</span><br><br><div class="edit_btn img_btn w3-ripple" onclick="edit_task('+key+')"></div>Progress:<span id="id_'+key+'_slidervalue">0</span>%<br><br><br><input id="id_'+key+'_slider" type="range" value="0" step="10" oninput="update_slider('+key+')" onchange="store_slider('+key+')"></div>');
+			$('#main').append('<div id="id_'+key+'" class="entry w3-card-4 w3-round w3-leftbar w3-rightbar w3-border-white w3-gray"><div id="id_'+key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_task('+key+')"></div>Deadline: <span id="id_'+key+'_date">'+date+'</span>, <span id="id_'+key+'_time">'+time+'</span><br><br><div class="edit_btn img_btn w3-ripple" onclick="edit_task('+key+')"></div>Progress:<span id="id_'+key+'_slidervalue">0</span>%<br><br><br><input id="id_'+key+'_slider" type="range" value="0" step="10" oninput="update_slider('+key+')" onchange="store_slider('+key+')"></div>');
 			localStorage.setItem(key.toString(),JSON.stringify(jobj));
 			localStorage.setItem(key+'_slider',store_slider_val);
 			
@@ -264,7 +264,7 @@ function store_slider(k){
 				date_now=Date.parse('now').toString('d-MMM-yyyy');
 				time_now=Date.parse('now').toString('hh:mm tt');
 				//Create visual div
-				$('#complete').append('<div id="id_'+k+'_completed" class="entry w3-card-4 w3-round w3-leftbar w3-border-white w3-gray"><div id="id_'+k+'_completed_title"  class="en_title w3-large">'+title+'</div><div id="id_'+k+'_completed_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_complete_task('+k+')"></div>Deadline: <span id="id_'+k+'_completed_date">'+date+'</span>, <span id="id_'+k+'_completed_time">'+time+'</span><br><br>Completed on: <span id="id_'+k+'_completeddate_date">'+date_now+'</span>, <span id="id_'+k+'_completedtime_time">'+time_now+'</span><br></div>');
+				$('#complete').append('<div id="id_'+k+'_completed" class="entry w3-card-4 w3-round w3-leftbar w3-rightbar w3-border-white w3-gray"><div id="id_'+k+'_completed_title"  class="en_title w3-large">'+title+'</div><div id="id_'+k+'_completed_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_complete_task('+k+')"></div>Deadline: <span id="id_'+k+'_completed_date">'+date+'</span>, <span id="id_'+k+'_completed_time">'+time+'</span><br><br>Completed on: <span id="id_'+k+'_completeddate_date">'+date_now+'</span>, <span id="id_'+k+'_completedtime_time">'+time_now+'</span><br></div>');
 				localStorage.setItem(k+'_completed',localStorage.getItem(k));
 				localStorage.setItem(k+'_completeddate',date_now);
 				localStorage.setItem(k+'_completedtime',time_now);

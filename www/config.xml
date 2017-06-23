@@ -1,21 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.agzuniverse.zapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>zapp</name>
+    <name>Tasker</name>
     <description>
         Project ZAP, debug phase.
     </description>
-    <author email="aswingauthor@gmail.com" href="https://agzuniverse.blogspot.in">
+    <author email="agzstudios@gmail.com" href="https://agzuniverse.github.io/">
         AGZ Studios
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
 	<preference name="orientation" value="portrait" />
+	<preference name="AutoHideSplashScreen" value="false" />
+	<preference name="SplashScreenDelay" value="1000" />
+	<preference name="SplashMaintainAspectRatio" value="true" />
+	<preference name="SplashShowOnlyFirstTime" value="false" />
    <!-- <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />-->
+    <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <!--<plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />-->
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
