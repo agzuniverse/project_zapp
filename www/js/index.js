@@ -352,6 +352,9 @@ function back_handler(){
 	else if(div_on_focus==1){
 		$('#tasker').fadeOut(500);
 		$('#task_assign_form')[0].reset();
+		if(tasker_mode==1){
+			tasker_mode==0;
+		}
 		div_on_focus=0;
 	}
 	else if(div_on_focus==2){
