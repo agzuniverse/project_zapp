@@ -103,8 +103,6 @@ $('#tasker_save').click(function(e){
 			//Parsing using datejs
 			date=Date.parse(jobj.date).toString("d-MMM-yyyy");
 			time=Date.parse(jobj.time).toString("hh:mm tt");
-			
-			console.log(key);
 		
 			//Create visual div
 			$('#main').append('<div id="id_'+key+'" class="entry w3-card-4 w3-round w3-leftbar w3-rightbar w3-border-white w3-gray"><div id="id_'+key+'_title"  class="en_title w3-large">'+title+'</div><div id="id_'+key+'_desc" style="display:none;"><br>'+desc+'</div><br><div class="del_btn img_btn w3-ripple" onclick="del_task('+key+')"></div>Deadline: <span id="id_'+key+'_date">'+date+'</span>, <span id="id_'+key+'_time">'+time+'</span><br><br><div class="edit_btn img_btn w3-ripple" onclick="edit_task('+key+')"></div>Progress:<span id="id_'+key+'_slidervalue">0</span>%<br><br><br><input id="id_'+key+'_slider" type="range" value="0" step="10" oninput="update_slider('+key+')" onchange="store_slider('+key+')"></div>');
@@ -353,7 +351,7 @@ function back_handler(){
 		$('#tasker').fadeOut(500);
 		$('#task_assign_form')[0].reset();
 		if(tasker_mode==1){
-			tasker_mode==0;
+			tasker_mode=0;
 		}
 		div_on_focus=0;
 	}
