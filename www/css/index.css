@@ -303,3 +303,4 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #64363f;
 }
+.menu_option:hover {background: black;color:white;}
